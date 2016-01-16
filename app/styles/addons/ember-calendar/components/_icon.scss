@@ -1,0 +1,19 @@
+////
+/// Icons Component
+/// @group icon
+////
+
+
+@mixin icon($name, $selector: null) {
+  @extend .fa-#{$name};
+
+  @if $selector == null {
+    @include fa-icon;
+  } @else {
+    &:#{$selector} {
+      @include fa-icon;
+    }
+  }
+}
+
+

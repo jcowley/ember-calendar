@@ -1,0 +1,159 @@
+////
+/// Buttons Component
+/// @group button
+////
+
+$button-base-background-color: color(white) !default;
+$button-base-text-color: color(gray, jumbo) !default;
+$button-base-padding: 15px !default;
+$button-icon-size: 28px !default;
+$button-disabled-transparency: .4 !default;
+$button-disabled-hover-transparency: .2 !default;
+$button-tiny-height: 24px !default;
+$button-small-height: 38px !default;
+$button-large-height: 50px !default;
+
+
+$include-html-paint-button: true !default;
+
+
+@mixin button-icon($icon) {
+  @extend %button-icon;
+  @include icon($icon);
+}
+
+
+@mixin button-disabled() {
+  background-color: transparentize(
+    $button-base-background-color,
+    $button-disabled-transparency);
+  border-color: darken($button-base-background-color, 5%);
+  box-shadow: none;
+  color: transparentize(
+    $button-base-text-color,
+    $button-disabled-transparency);
+  cursor: not-allowed;
+
+  &:hover,
+  &:focus {
+    background-color: transparentize(
+      $button-base-background-color,
+      $button-disabled-hover-transparency);
+    color: transparentize(
+      $button-base-text-color,
+      $button-disabled-hover-transparency);
+  }
+}
+
+
+%button-icon {
+  padding: 0;
+
+  &:before {
+    display: block;
+    line-height: $button-icon-size;
+    width: $button-icon-size;
+  }
+}
+
+/// Default button styles
+
+%button {
+
+  background-color: $button-base-background-color;
+  border: 1px solid lighten($button-base-text-color, 20%);
+  border-radius: $global-radius;
+  color: $button-base-text-color;
+  transition: color $global-transition-duration / 2 ease;
+
+  &:hover,
+  &:focus {
+    color: darken($button-base-text-color, 20%);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[disabled] {
+    @include button-disabled;
+  }
+}
+
+
+/// Button Group
+///
+/// @example scss
+/// .button-group {
+///   @extend %button-group;
+/// }
+///
+/// @example
+///   <ul class="button-group">
+///     <li><button class="cog"></button></li>
+///     <li><button class="dashboard">Dashboard</button></li>
+///     <li><button class="clock"></button></li>
+///   </ul>
+
+%button-group {
+  @include clearfix();
+
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  white-space: nowrap;
+
+  &:not(:first-child) {
+    padding-left: $button-base-padding / 2;
+  }
+
+  > li {
+    display: inline-block;
+    margin: 0 -2px 0 -1px;
+
+    button {
+      border-color: color(border);
+      border-radius: 0;
+      border-right: 0;
+      line-height: $button-icon-size;
+      padding: 0 $button-base-padding;
+
+      &:before {
+        display: inline-block;
+      }
+
+      &:not(:empty):before {
+        margin-left: -$button-base-padding;
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+
+      &,
+      button {
+        @include border-left-radius($global-radius);
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &,
+      button {
+        @include border-right-radius($global-radius);
+      }
+
+      button {
+        border-right: solid 1px color(border);
+      }
+    }
+
+  }
+}
+
+#{$calendar-container} button {
+  @extend %button;
+}

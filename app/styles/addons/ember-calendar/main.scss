@@ -1,4 +1,35 @@
-@import 'global';
+/// Import dependencies
+
+@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+
+@import 'functions';
+@import 'components/color';
+@import 'settings';
+@import 'mixins';
+
+// /// Import core vendor dependencies
+
+@import "bower_components/neat/app/assets/stylesheets/neat";
+@import 'bower_components/fontawesome/scss/variables';
+@import 'bower_components/fontawesome/scss/path';
+@import 'bower_components/fontawesome/scss/mixins';
+@import 'bower_components/fontawesome/scss/icons';
+
+// /// Import base components
+
+@import 'components/icon';
+@import 'components/typography';
+@import 'components/button';
+@import 'components/grid';
+
+// /// Import components
+
+@import 'components/form';
+@import 'components/dropdown';
+
+
+
 @import 'components/as-calendar';
 @import 'components/as-calendar/header';
 @import 'components/as-calendar/occurrence';
