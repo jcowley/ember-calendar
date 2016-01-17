@@ -33,6 +33,26 @@ module.exports = {
       type: 'vendor'
     });
 
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.ttf'), {
+      destDir: 'assets/fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff'), {
+      destDir: 'assets/fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.woff2'), {
+      destDir: 'assets/fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.svg'), {
+      destDir: 'assets/fonts'
+    });
+
+    app.import(path.join(app.bowerDirectory, 'fontawesome/fonts/fontawesome-webfont.eot'), {
+      destDir: 'assets/fonts'
+    });
+
     if (app.env === 'test') {
       app.import(path.join(app.bowerDirectory, 'jquery-simulate/jquery.simulate.js'), {
         type: 'test'

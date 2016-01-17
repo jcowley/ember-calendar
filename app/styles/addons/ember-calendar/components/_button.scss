@@ -16,16 +16,16 @@ $button-large-height: 50px !default;
 
 /// Default button styles
 
-$button-colors: (
-  base: color(text, small),
-  primary: color(link),
-  secondary: color(secondary),
-  alert: color(alert),
-  error: color(alert),
-  warning: color(warning),
-  success: color(success),
-  info: color(info)
-);
+// $button-colors: (
+//   base: color(text, small),
+//   primary: color(link),
+//   secondary: color(secondary),
+//   alert: color(alert),
+//   error: color(alert),
+//   warning: color(warning),
+//   success: color(success),
+//   info: color(info)
+// );
 
 $include-html-paint-button: true !default;
 
@@ -81,44 +81,45 @@ $include-html-paint-button: true !default;
 
 /// Button resets
 
-#{$all-buttons} {
-  appearance: none;
-  border: 0;
-  border-radius: $global-radius;
-  cursor: pointer;
-  display: inline-block;
-  font-family: $base-font-family;
-  font-size: $small-font-size;
-  -webkit-font-smoothing: $heading-font-smoothing;
-  font-weight: $font-weight-normal;
-  line-height: $base-line-height;
-  padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color $global-transition-duration / 2 ease;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+// #{$all-buttons} {
+//   appearance: none;
+//   border: 0;
+//   border-radius: $global-radius;
+//   cursor: pointer;
+//   display: inline-block;
+//   font-family: $base-font-family;
+//   font-size: $small-font-size;
+//   -webkit-font-smoothing: $heading-font-smoothing;
+//   font-weight: $font-weight-normal;
+//   line-height: $base-line-height;
+//   padding: $small-spacing $base-spacing;
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   transition: background-color $global-transition-duration / 2 ease;
+//   user-select: none;
+//   vertical-align: middle;
+//   white-space: nowrap;
 
-  &:hover,
-  &:focus {
-    background-color: color(border, light);
-    outline: none;
-  }
+//   &:hover,
+//   &:focus {
+//     background-color: color(border, light);
+//     outline: none;
+//   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: .5;
+//   &:disabled {
+//     cursor: not-allowed;
+//     opacity: .5;
 
-    &:hover {
-      background-color: color(border);
-    }
-  }
-}
+//     &:hover {
+//       background-color: color(border);
+//     }
+//   }
+// }
 
 /// Default button styles
 
 %button {
+
   background-color: $button-base-background-color;
   border: 1px solid lighten($button-base-text-color, 20%);
   border-radius: $global-radius;
@@ -144,78 +145,78 @@ $include-html-paint-button: true !default;
 /// Solid button styles
 /// @access private
 
-@mixin button-solid(
-  $bg: color(white),
-  $color: color(primary)
-) {
-  background-color: $bg;
-  border-radius: $global-radius;
-  border: 1px solid $color;
-  color: $color;
-  font-size: $small-font-size;
-  font-weight: $font-weight-bold;
-  padding: $button-base-padding;
-  text-transform: uppercase;
+// @mixin button-solid(
+//   $bg: color(white),
+//   $color: color(primary)
+// ) {
+//   background-color: $bg;
+//   border-radius: $global-radius;
+//   border: 1px solid $color;
+//   color: $color;
+//   font-size: $small-font-size;
+//   font-weight: $font-weight-bold;
+//   padding: $button-base-padding;
+//   text-transform: uppercase;
 
-  &:focus {
-    background-color: $bg;
-    color: $color;
-  }
+//   &:focus {
+//     background-color: $bg;
+//     color: $color;
+//   }
 
-  &:hover {
-    background-color: $color;
-    border-color: $bg;
-    color: $bg;
-  }
-}
+//   &:hover {
+//     background-color: $color;
+//     border-color: $bg;
+//     color: $bg;
+//   }
+// }
 
 /// Generate all button styles placeholders
 /// @access private
 
-@mixin button-color-placeholders {
-  @each $type, $button-color in $button-colors {
-    %button-#{$type} {
-      @include button-solid($color: $button-color);
-    }
+// @mixin button-color-placeholders {
+//   @each $type, $button-color in $button-colors {
+//     %button-#{$type} {
+//       @include button-solid($color: $button-color);
+//     }
 
-    %button-#{$type}-inverted {
-      @include button-solid($bg: $button-color, $color: contrast($button-color, $dark: color(text)));
+//     %button-#{$type}-inverted {
+//       @include button-solid($bg: $button-color, $color: contrast($button-color, $dark: color(text)));
 
-      border-color: transparent;
-    }
-  }
-}
+//       border-color: transparent;
+//     }
+//   }
+// }
 
 /// Tiny button styles
 /// @require {placeholder} button
 
-%button-tiny {
-  line-height: $button-tiny-height;
-  padding: 0 $button-base-padding / 2;
-}
+// %button-tiny {
+//   line-height: $button-tiny-height;
+//   padding: 0 $button-base-padding / 2;
+// }
 
 /// Small button styles
 /// @require {placeholder} button
 
-%button-small {
-  line-height: $button-small-height;
-  padding: 0 $button-base-padding / 2;
-}
+// %button-small {
+//   line-height: $button-small-height;
+//   padding: 0 $button-base-padding / 2;
+// }
 
 /// Large button styles
 /// @require {placeholder} button
 
-%button-large {
-  line-height: $button-large-height;
-  padding: 0 $button-base-padding * 2;
-}
+// %button-large {
+//   line-height: $button-large-height;
+//   padding: 0 $button-base-padding * 2;
+// }
 
 /// Rounded button style
 /// @require {placeholder} button
 
-%button-rounded {
-  border-radius: $global-rounded;
-}
+// %button-rounded {
+//   border-radius: $global-rounded;
+// }
 
 /// Button Group
 ///
@@ -288,12 +289,12 @@ $include-html-paint-button: true !default;
   }
 }
 
-@include exports('paint-button') {
-  @include button-color-placeholders;
+// @include exports('paint-button') {
+//   // @include button-color-placeholders;
 
-  @if $include-html-paint-button {
-    button {
+//   @if $include-html-paint-button {
+    .ember-calendar button {
       @extend %button;
     }
-  }
-}
+//   }
+// }
