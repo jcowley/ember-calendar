@@ -1,21 +1,8 @@
 ////
 /// Icons Component
 /// @group icon
-/// @since v0.8.32
 ////
 
-/// Extends FontAwesome icons and Paint icons
-
-
-/// Custom Paint icons map
-
-
-/// Renders font-awesome icons
-/// @param {string} $name - The name of the icon
-/// @example scss - Usage
-///   .dashboard-icon {
-///     @include icon(dashboard);
-///   }
 
 @mixin icon($name, $selector: null) {
   @extend .fa-#{$name};
@@ -29,13 +16,4 @@
   }
 }
 
-/// @access private
-
-
-/// Renders custom Paint icons
-/// @param {string} $name - The name of the icon
-/// @example scss - Usage
-///   .dashboard-icon {
-///     @include paint-icon(dashboard);
-///   }
 

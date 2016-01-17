@@ -1,7 +1,6 @@
 ////
 /// Buttons Component
 /// @group button
-/// @since v0.9.0
 ////
 
 $button-base-background-color: color(white) !default;
@@ -14,35 +13,15 @@ $button-tiny-height: 24px !default;
 $button-small-height: 38px !default;
 $button-large-height: 50px !default;
 
-/// Default button styles
-
-// $button-colors: (
-//   base: color(text, small),
-//   primary: color(link),
-//   secondary: color(secondary),
-//   alert: color(alert),
-//   error: color(alert),
-//   warning: color(warning),
-//   success: color(success),
-//   info: color(info)
-// );
 
 $include-html-paint-button: true !default;
 
-/// Generate a button with icon
-/// @param {String} $icon - The icon name
-/// @example scss
-///   .dasboard-button {
-///     @include button-icon(dashboard);
-///   }
 
 @mixin button-icon($icon) {
   @extend %button-icon;
   @include icon($icon);
 }
 
-/// Disabled button styles
-/// @access private
 
 @mixin button-disabled() {
   background-color: transparentize(
@@ -66,8 +45,6 @@ $include-html-paint-button: true !default;
   }
 }
 
-/// Button with icon placeholder
-/// @access private
 
 %button-icon {
   padding: 0;
@@ -78,43 +55,6 @@ $include-html-paint-button: true !default;
     width: $button-icon-size;
   }
 }
-
-/// Button resets
-
-// #{$all-buttons} {
-//   appearance: none;
-//   border: 0;
-//   border-radius: $global-radius;
-//   cursor: pointer;
-//   display: inline-block;
-//   font-family: $base-font-family;
-//   font-size: $small-font-size;
-//   -webkit-font-smoothing: $heading-font-smoothing;
-//   font-weight: $font-weight-normal;
-//   line-height: $base-line-height;
-//   padding: $small-spacing $base-spacing;
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   transition: background-color $global-transition-duration / 2 ease;
-//   user-select: none;
-//   vertical-align: middle;
-//   white-space: nowrap;
-
-//   &:hover,
-//   &:focus {
-//     background-color: color(border, light);
-//     outline: none;
-//   }
-
-//   &:disabled {
-//     cursor: not-allowed;
-//     opacity: .5;
-
-//     &:hover {
-//       background-color: color(border);
-//     }
-//   }
-// }
 
 /// Default button styles
 
@@ -142,81 +82,6 @@ $include-html-paint-button: true !default;
   }
 }
 
-/// Solid button styles
-/// @access private
-
-// @mixin button-solid(
-//   $bg: color(white),
-//   $color: color(primary)
-// ) {
-//   background-color: $bg;
-//   border-radius: $global-radius;
-//   border: 1px solid $color;
-//   color: $color;
-//   font-size: $small-font-size;
-//   font-weight: $font-weight-bold;
-//   padding: $button-base-padding;
-//   text-transform: uppercase;
-
-//   &:focus {
-//     background-color: $bg;
-//     color: $color;
-//   }
-
-//   &:hover {
-//     background-color: $color;
-//     border-color: $bg;
-//     color: $bg;
-//   }
-// }
-
-/// Generate all button styles placeholders
-/// @access private
-
-// @mixin button-color-placeholders {
-//   @each $type, $button-color in $button-colors {
-//     %button-#{$type} {
-//       @include button-solid($color: $button-color);
-//     }
-
-//     %button-#{$type}-inverted {
-//       @include button-solid($bg: $button-color, $color: contrast($button-color, $dark: color(text)));
-
-//       border-color: transparent;
-//     }
-//   }
-// }
-
-/// Tiny button styles
-/// @require {placeholder} button
-
-// %button-tiny {
-//   line-height: $button-tiny-height;
-//   padding: 0 $button-base-padding / 2;
-// }
-
-/// Small button styles
-/// @require {placeholder} button
-
-// %button-small {
-//   line-height: $button-small-height;
-//   padding: 0 $button-base-padding / 2;
-// }
-
-/// Large button styles
-/// @require {placeholder} button
-
-// %button-large {
-//   line-height: $button-large-height;
-//   padding: 0 $button-base-padding * 2;
-// }
-
-/// Rounded button style
-/// @require {placeholder} button
-
-// %button-rounded {
-//   border-radius: $global-rounded;
-// }
 
 /// Button Group
 ///
@@ -289,12 +154,6 @@ $include-html-paint-button: true !default;
   }
 }
 
-// @include exports('paint-button') {
-//   // @include button-color-placeholders;
-
-//   @if $include-html-paint-button {
-    .ember-calendar button {
-      @extend %button;
-    }
-//   }
-// }
+#{$calendar-container} button {
+  @extend %button;
+}

@@ -55,7 +55,7 @@ $typography: map-merge-settings($typography-default-settings, $typography);
     font-size: $base-font-size;
     font-weight: $font-weight-normal;
     line-height: $base-line-height;
-    
+
     h1,
     h2,
     h3,
@@ -149,11 +149,7 @@ $typography: map-merge-settings($typography-default-settings, $typography);
   }
 }
 
-// @include exports('paint-typography') {
-  // @if $include-html-paint-typography {
-    @include typography-resets;
-    @include typography-headings;
-    @include typography-font-smoothing;
-    @include typography-condensed-tags;
-  // }
-// }
+@include typography-resets;
+@include typography-headings;
+@include typography-font-smoothing;
+@include typography-condensed-tags;

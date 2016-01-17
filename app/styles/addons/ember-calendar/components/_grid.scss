@@ -1,7 +1,6 @@
 ////
 /// Grid placeholders generator
 /// @group grid
-/// @since v0.8.28
 ////
 
 /// Grid placeholder prefix
@@ -54,24 +53,6 @@ $grid-responsive-sizes: 'small', 'medium', 'large', 'xlarge', 'xxlarge';
   }
 }
 
-///
-/// @example scss - Usage
-///   .wrapper {
-///     @extend %grid-row;
-///
-///     .sidebar {
-///       @extend %grid-column-medium-4;
-///       @extend %grid-column-large-3;
-///       @extend %grid-column-xlarge-2;
-///     }
-///
-///     .content {
-///       @extend %grid-column-medium-8;
-///       @extend %grid-column-large-9;
-///       @extend %grid-column-xlarge-10;
-///     }
-///   }
-///
 
 %grid-row {
   @include outer-container;
